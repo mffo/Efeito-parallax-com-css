@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parallax com CSS</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+<style type="text/css">
+html{
+	height: 100%;
+	overflow: hidden;/*esconder o scroll do html*/
+}
+body{
+	margin: 0;
+	padding: 0;
+	perspective:1px; /*perspectiva, da questao de profundidade*/
+	transform-style: preserve-3d;/*manter aparencia de 3d*/
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	background-color: #fff;
+}
+header{
+	box-sizing: border-box;;/*ignorar margin, padding e border ficando apenas largura*/
+	min-height: 100vh;/*simular view porte, divide por 100 e pega sempre tamanho do view porte*/
+	padding: 27vw 0 5vw;
+	position: relative;/*permanecer no lugar que ele ta*/
+	transform-style: inherit;
+	width: 100vw;
+
+	font-family: 'Oswald', sans-serif;
+
+}
+header h1{
+	margin-top: -100px;
+	font-size: 100px;
+	color: #fff;
+}
+header,header::before{/*estilo para header e antes do header*/
+	background: 50% 50% / cover;/*cover para preencher todo espaço que tem do background*/
+}
+header::before{
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	position: absolute;
+	content: "";/*inserindo conteudo nesse elemento, no caso esta vazio*/
+	background-image: url(sunset.jpg);/*imagem cmo background*/
+	z-index: -1;/*aplicando texto em cima da imagem*/
+	background-size: cover;/*preenchendo todo espaço*/
+
+	transform-origin: center center 0;
+	transform: translateZ(-1px) scale(2);
+
+	min-height: 100vh;
+}
+
+header * {/*tudo que tiver dentro do header*/
+	letter-spacing: 0.25em;
+	text-align: center;
+	margin: 0;
+	font-size: 2em;
+	color: #fff;
+
+}
+#texto{
+	background-color: #666;
+	color: #fff;
+	text-align: justify;/*justificado ambos os lados*/
+	font-size: 1.4em;
+	font-family: 'Oswald', sans-serif;
+}
+</style>
+<body>
+	<header>
+		<h1>Parallax com CSS</h1>
+		<p>Efeito Parallax sem utilizar javascript</p>
+	</header>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12" id="texto">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis sed lectus in vulputate. Donec maximus, felis id rutrum sodales, justo augue dignissim arcu, non rutrum risus nunc in purus. Sed ex nisi, suscipit vitae sollicitudin vel, facilisis non nulla. Suspendisse tristique mi mi, et tristique eros tincidunt vel. Nunc vel elit ac nibh bibendum finibus tempus sit amet neque. Nunc in aliquet risus. Mauris ut accumsan ex.</p>
+
+				<p>Suspendisse interdum, ex a facilisis aliquet, metus neque bibendum ipsum, vitae suscipit mi risus in massa. Praesent finibus ante arcu, sit amet interdum nulla accumsan vestibulum. Integer scelerisque condimentum laoreet. Aliquam imperdiet erat sapien, sed dictum dolor lacinia et. Suspendisse id metus erat. In laoreet fringilla elit, in auctor diam iaculis vel. In luctus odio porttitor nunc faucibus, sit amet lobortis nisl bibendum. Suspendisse neque diam, ornare vel tortor id, hendrerit pharetra nunc. Vivamus et libero purus.</p>
+
+				<p>Suspendisse dictum augue vulputate tincidunt blandit. Sed ornare arcu tincidunt eros congue viverra. Vivamus venenatis ullamcorper leo sed euismod. Ut commodo dui et lacus placerat, non iaculis lacus ultricies. Vivamus euismod ex pulvinar risus rhoncus vestibulum. In hac habitasse platea dictumst. Aliquam auctor, tellus non condimentum tristique, elit lectus tincidunt ipsum, eget sodales felis augue sit amet ante. Nam interdum nunc fermentum lacinia facilisis. Etiam congue magna dolor, iaculis interdum ligula ornare at. Curabitur a nulla ac libero cursus facilisis cursus a purus. Ut bibendum odio dignissim neque ultrices aliquet. Praesent blandit erat lorem.</p>
+
+
+				<p>Suspendisse dictum augue vulputate tincidunt blandit. Sed ornare arcu tincidunt eros congue viverra. Vivamus venenatis ullamcorper leo sed euismod. Ut commodo dui et lacus placerat, non iaculis lacus ultricies. Vivamus euismod ex pulvinar risus rhoncus vestibulum. In hac habitasse platea dictumst. Aliquam auctor, tellus non condimentum tristique, elit lectus tincidunt ipsum, eget sodales felis augue sit amet ante. Nam interdum nunc fermentum lacinia facilisis. Etiam congue magna dolor, iaculis interdum ligula ornare at. Curabitur a nulla ac libero cursus facilisis cursus a purus. Ut bibendum odio dignissim neque ultrices aliquet. Praesent blandit erat lorem.</p>
+
+
+				<p>Suspendisse dictum augue vulputate tincidunt blandit. Sed ornare arcu tincidunt eros congue viverra. Vivamus venenatis ullamcorper leo sed euismod. Ut commodo dui et lacus placerat, non iaculis lacus ultricies. Vivamus euismod ex pulvinar risus rhoncus vestibulum. In hac habitasse platea dictumst. Aliquam auctor, tellus non condimentum tristique, elit lectus tincidunt ipsum, eget sodales felis augue sit amet ante. Nam interdum nunc fermentum lacinia facilisis. Etiam congue magna dolor, iaculis interdum ligula ornare at. Curabitur a nulla ac libero cursus facilisis cursus a purus. Ut bibendum odio dignissim neque ultrices aliquet. Praesent blandit erat lorem.</p>			
+			</div>
+		</div>
+	</div>
+</body>
+</html>
